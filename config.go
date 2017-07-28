@@ -34,6 +34,7 @@ type Configuration struct {
 	MaxPeersPerRoom int `json:"max_peers_per_room"`
 	RoomTimeout     int `json:"room_timeout"`
 	RoomAge         int `json:"room_age"`
+	RoomName	string `json:"room_name"`
 
 	MemoryReleaseInterval int `json:"memory_release_interval"`
 

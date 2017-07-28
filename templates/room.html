@@ -2,12 +2,14 @@
 	<form method="post" action="{{.Config.Url}}/{{.Room.Id}}/login" id="form-login" class="compact" autocomplete="off">
 		<fieldset class="create">
 			<h1>Join room #{{.Room.Id}}</h1>
+			<!--
 			<div style="display: none"><input type="password"/></div>
 			<input type="password" name="p" value="p" style="display:none" />
 			
 			<p>
 				<input type="password" id="password" placeholder="Password" required pattern=".{5,100}" maxlength="100" autocomplete="off" title="5 to 100 characters" />
 			</p>
+			-->
 			<p>
 				<input type="text" id="handle" placeholder="Pick a nickname (optional)" pattern=".{3,30}" maxlength="30" autocomplete="off" title="3 to 30 characters" />
 				<span class="help">3 to 30 characters</span>

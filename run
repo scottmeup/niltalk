@@ -1,1 +1,3 @@
-go run api.go conn.go db.go logger.go niltalk.go config.go
+#!/bin/bash -
+export GOPATH=/usr/go
+go run api.go conn.go db.go logger.go niltalk.go config.go &
