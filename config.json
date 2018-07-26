@@ -1,7 +1,7 @@
 {
 	// websocket server
-	"address": "0.0.0.0:9000", //Can set this to an available, specific IP instead. port <=1024 requires root
-	"url": "http://localhost:9000", // no trailing slash
+	"address": "192.168.16.118:9000", //Can set this to an available, specific IP instead. port <=1024 requires root
+	"url": "http://niltalk.chathost.com:9000", // no trailing slash. MUST BE SET TO: hostname, as visible to the CLIENT
 	"websocket_route": "/w/",
 	"room_route": "/r/",
 
