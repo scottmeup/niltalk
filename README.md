@@ -13,4 +13,5 @@ You can download the package dependencies by switching to the `niltalk` director
 ### Usage
 - Have a Redis instance running
 - Configure the necessary values in `config.json`
+- Ensure that `config.json`:`url` is set to the hostname as visible by the client, otherwise you will receive 'unknown error'
 - Execute `./run` in the `niltalk` directory in your GOPATH (You may have to set the permission to 755 by doing `chmod 755 ./run`)
