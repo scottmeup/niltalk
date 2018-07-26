@@ -1,7 +1,7 @@
 {
 	// websocket server
 	"address": "0.0.0.0:9000",
-	"url": "http://localhost:9000", // no trailing slash
+	"url": "http://localhost:9000", // no trailing slash. Is required to be set to the hostname as the *client* sees it.
 	"websocket_route": "/w/",
 	"room_route": "/r/",
 
