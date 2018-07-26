@@ -1,6 +1,6 @@
 {
 	// websocket server
-	"address": "0.0.0.0:9000",
+	"address": "0.0.0.0:9000", //Can set this to an available, specific IP instead. port <=1024 requires root
 	"url": "http://localhost:9000", // no trailing slash
 	"websocket_route": "/w/",
 	"room_route": "/r/",
@@ -31,10 +31,11 @@
 	"rate_limit_interval": 10,
 	"rate_limit_messages": 20,
 
-	"max_rooms": 1000,
-	"max_peers_per_room": 10,
-	"room_timeout": 600, // period of inactivity after which a room will be auto-disposed
-	"room_age": 7200, // how long will the room id persist in the db before first use?
+	"max_rooms": 1,
+	"max_peers_per_room": 300,
+	"room_timeout": 21600, // period of inactivity after which a room will be auto-disposed
+	"room_age": 21600, // how long will the room id persist in the db before first use?
+	"room_name": "niltalk", //id to use for the room 
 
 	// interval in (seconds) to release free'd memory back to the OS
 	// this is expensive. best to set a large interval
