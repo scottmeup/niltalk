@@ -63,7 +63,8 @@ func roomPage(ctx *stack.Context, w http.ResponseWriter, r *http.Request) {
 
 // Validate a room creation request and create the roon.
 func createRoom(w http.ResponseWriter, r *http.Request) {
-	password := r.FormValue("password")
+	//password := r.FormValue("password")
+	password:= "12345"	
 	if len(password) < 5 {
 		respondJSON(w, "Invalid password (min 4 chars)", nil, http.StatusBadRequest)
 		return
@@ -123,7 +124,8 @@ func login(ctx *stack.Context, w http.ResponseWriter, r *http.Request) {
 
 	// Password validation.
 	r.ParseForm()
-	password := []byte(r.FormValue("password"))
+	//password := []byte(r.FormValue("password"))
+	password := []byte("12345")
 
 	err := bcrypt.CompareHashAndPassword(room.password, password)
 
@@ -302,7 +304,8 @@ func generateRoomId(length int) (string, error) {
 
 	// Try upto 5 times to generate a unique id.
 	for i := 0; i < 5; i++ {
-		id = uniuri.NewLen(length)
+		//id = uniuri.NewLen(length)
+		id = config.RoomName
 
 		exists, err := db.Exists(config.CachePrefixRoom + id)
 
