@@ -317,21 +317,18 @@ func generateRoomId(length int) (string, error) {
 
 	var id string
 
-	// Try upto 5 times to generate a unique id.
-	for i := 0; i < 5; i++ {
-		//id = uniuri.NewLen(length)
-		id = config.RoomName
 
-		exists, err := db.Exists(config.CachePrefixRoom + id)
+	id = config.RoomName	//from `config.go`:`RoomName` -> `config.json`:`room_name`
 
-		if err != nil {
-			return "", errors.New("Unable to generate room")
-		}
+	exists, err := db.Exists(config.CachePrefixRoom + id)
 
-		// Got a unique id.
-		if !exists {
-			break
-		}
+	if err != nil {
+		return "", errors.New("Room /r/ " & id & "already started")
+	}
+
+	// Got a unique id.
+	if !exists {
+		break
 	}
 
 	return id, nil
